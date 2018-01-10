@@ -47,7 +47,7 @@
             <div class="col-lg-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Calculator</h3>
+                        <h3 class="panel-title">  <h2>Number to Guess: <span id="number-to-guess"></span></h2></h3>
                     </div>
 
                     <div class="panel-body">
@@ -60,56 +60,10 @@
                         <button id="button-3" class="btn btn-primary number" value="3">
                             <h1>3</h1>
                         </button>
-                        <button id="button-plus" class="btn btn-danger operator" value="plus">
-                            <h1>+</h1>
-                        </button>
-                        <br>
-                        <br>
                         <button id="button-4" class="btn btn-primary number" value="4">
                             <h1>4</h1>
                         </button>
-                        <button id="button-5" class="btn btn-primary number" value="5">
-                            <h1>5</h1>
-                        </button>
-                        <button id="button-6" class="btn btn-primary number" value="6">
-                            <h1>6</h1>
-                        </button>
-                        <button id="button-minus" class="btn btn-danger operator" value="minus">
-                            <h1>&minus;</h1>
-                        </button>
-                        <br>
-                        <br>
-                        <button id="button-7" class="btn btn-primary number" value="7">
-                            <h1>7</h1>
-                        </button>
-                        <button id="button-8" class="btn btn-primary number" value="8">
-                            <h1>8</h1>
-                        </button>
-                        <button id="button-9" class="btn btn-primary number" value="9">
-                            <h1>9</h1>
-                        </button>
-                        <button id="button-multiply" class="btn btn-danger operator" value="times">
-                            <h1>&times;</h1>
-                        </button>
-                        <br>
-                        <br>
-                        <button id="button-0" class="btn btn-primary number" value="0">
-                            <h1>0</h1>
-                        </button>
-                        <button id="button-divide" class="btn btn-danger operator" value="divide">
-                            <h1>&divide;</h1>
-                        </button>
-                        <button id="button-power" class="btn btn-danger operator" value="power">
-                            <h1>^</h1>
-                        </button>
-                        <button id="button-equal" class="btn btn-success equal" value="equals">
-                            <h1>=</h1>
-                        </button>
-                        <br>
-                        <br>
-                        <button id="button-clear" class="btn btn-default clear" value="clear">
-                            <h1>clear</h1>
-                        </button>
+
                     </div>
                 </div>
             </div>
@@ -143,6 +97,12 @@
             var result;
             var isOperatorChosen;
             var isCalculated;
+            
+            var targetNumber =  Math.floor(Math.random() * 101) + 19;
+             $("#number-to-guess").text(targetNumber);
+  
+
+             
 
             // Use a function to initialize our calculator.
             // This way when the user hits clear, we can guarantee a reset of the app.
