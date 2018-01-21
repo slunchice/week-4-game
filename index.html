@@ -74,12 +74,9 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Wins:<span id="wins"></span> Losses:<span id="losses"></span> </h3>
                     </div>
-                    <div class="panel-body">
-                        <h1 id="first-number"></h1>
-                        <h1 id="operator"></h1>
-                        <h1 id="second-number"></h1>
-                        <hr>
-                        <h1 id="result"></h1>
+                    <div class="panel-body2">
+
+                     
                     </div>
                 </div>
             </div>
@@ -90,30 +87,16 @@
 
         $(document).ready(function () {
 
-            // Make our variables global to the runtime of our application
           
             var wins = 0;
             var losses = 0;
             var sum = 0;
             var targetNumber = 0;
-            // var targetNumber =  Math.floor(Math.random() * 102) + 19;
-            //  $("#number-to-guess").text(targetNumber);
+         
 
-            // var crystalOne = Math.floor(Math.random() * 12) + 1;
-            // var crystalTwo = Math.floor(Math.random() * 12) + 1; 
-            // var crystalThree = Math.floor(Math.random() * 12) + 1; 
-            // var crystalFour = Math.floor(Math.random() * 12) + 1;
-
-            //  $("#button-1").val(crystalOne);
-            //  $("#button-2").val(crystalTwo);
-            //  $("#button-3").val(crystalThree);
-            //  $("#button-4").val(crystalFour);
+            var crystal1 = $("<img src = assets/images/crystal1.jpg>")
 
 
-
-
-            // Use a function to initialize our calculator.
-            // This way when the user hits clear, we can guarantee a reset of the app.
             function initialize() {
                 targetNumber =  Math.floor(Math.random() * 102) + 19;
                 $("#number-to-guess").text(targetNumber);
@@ -132,12 +115,12 @@
             }
           
 
-            // Add an on click listener to all elements that have the class "number"
             $(".number").on("click", function () {
 
             
 
                 sum = sum + parseInt($(this).val());
+                $(".panel-body2").empty();
                 console.log(sum);
                 if (sum === targetNumber){
                     alert("You win!");
@@ -150,31 +133,11 @@
                     $("#losses").html(losses);
                     initialize();
                 }
-
-                // // Check if we've already run a calculation, if so... we'll just.
-                // if (isCalculated) return;
-
-                // // If operator is chosen, we should be writing the secondNumber, otherwise, the firstNumber
-                // if (isOperatorChosen) {
-                //     secondNumber += $(this).val();
-                //     $("#second-number").text(secondNumber);
-
-                // }
-                // else {
-                //     firstNumber += $(this).val();
-                //     $("#first-number").text(firstNumber);
-                // }
+                $(".panel-body2").append(sum);
+      
             });
 
-            // Add an on click listener to all elements that have the class "operator"
-            
-
-            // Add an on click listener to all elements that have the class "equal"
-            
-            // Add an on click listener to all elements that have the class "clear"
-           
-
-            // Call initializeCalculater so we can set the state of our app
+     
             initialize();
         });
 
